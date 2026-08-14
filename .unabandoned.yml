@@ -1,0 +1,23 @@
+schema: 1
+
+package: "@unabandoned/undeclared-identifiers"
+
+upstream:
+  repo: goto-bus-stop/undeclared-identifiers
+  reason: "unmaintained upstream — left idle while its dependency tree ages"
+
+summary: >-
+  Finds undeclared identifiers and property accesses in a JavaScript file by
+  walking its AST.
+
+why-forked: >-
+  A browserify analysis helper that went unmaintained while its dependency tree
+  aged; forked so Renovate keeps that tree current for consumers.
+
+status: active
+
+used-by:
+  - consumer: "@unabandoned/insert-module-globals"
+    purpose: "Locates the implicit globals that need to be shimmed in."
+
+tags: [ast, identifiers, static-analysis, browserify]
