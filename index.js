@@ -1,7 +1,40 @@
-var xtend = require('xtend')
-var acorn = require('acorn-node')
+var acorn = require('acorn')
 var dash = require('dash-ast')
 var getAssignedIdentifiers = require('get-assigned-identifiers')
+
+// defined(): the first argument that is not undefined. Replicates the
+// option-defaulting that acorn-node used to supply, so we can call acorn
+// directly and drop the abandoned acorn-node transitive.
+function defined () {
+  for (var i = 0; i < arguments.length; i++) {
+    if (arguments[i] !== undefined) return arguments[i]
+  }
+}
+
+function parse (src, opts) {
+  if (!opts) opts = {}
+  var acornOpts = {
+    // Defaults acorn-node used to supply out of the box. acorn 8 with
+    // ecmaVersion 'latest' natively parses everything acorn-node's bundled
+    // plugins added (bigint, class fields, static class features, numeric
+    // separators, import.meta, `export * as ns from`), so no plugins are
+    // needed — we call acorn directly.
+    ecmaVersion: 'latest',
+    allowHashBang: true,
+    allowReturnOutsideFunction: true,
+    ranges: defined(opts.ranges, opts.range),
+    locations: defined(opts.locations, opts.loc),
+    allowReserved: defined(opts.allowReserved, true),
+    allowImportExportEverywhere: defined(opts.allowImportExportEverywhere, false)
+  }
+
+  if (opts.ecmaVersion != null) acornOpts.ecmaVersion = opts.ecmaVersion
+  if (opts.sourceType != null) acornOpts.sourceType = opts.sourceType
+  if (opts.allowHashBang != null) acornOpts.allowHashBang = opts.allowHashBang
+  if (opts.allowReturnOutsideFunction != null) acornOpts.allowReturnOutsideFunction = opts.allowReturnOutsideFunction
+
+  return acorn.parse(src, acornOpts)
+}
 
 function visitFunction (node, state, ancestors) {
   if (node.params.length > 0) {
@@ -83,7 +116,7 @@ var bindingVisitor = {
 }
 
 module.exports = function findUndeclared (src, opts) {
-  opts = xtend({
+  opts = Object.assign({
     identifiers: true,
     properties: true,
     wildcard: false
@@ -100,7 +133,7 @@ module.exports = function findUndeclared (src, opts) {
   // Parse if `src` is not already an AST.
   var ast = typeof src === 'object' && src !== null && typeof src.type === 'string'
     ? src
-    : acorn.parse(src)
+    : parse(src)
 
   var parents = []
   dash(ast, {
