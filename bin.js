@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 
-var concat = require('simple-concat')
+// text(): node's built-in stream consumer, which replaces the abandoned
+// simple-concat. It resolves to a utf8 string, which is what acorn wants
+// anyway — simple-concat handed us a Buffer that acorn had to stringify.
+var text = require('node:stream/consumers').text
 var undeclared = require('./')
 
 if (arg('--help') || arg('-h')) {
@@ -8,9 +11,7 @@ if (arg('--help') || arg('-h')) {
   process.exit(0)
 }
 
-concat(process.stdin, function (err, src) {
-  if (err) throw err
-
+text(process.stdin).then(function (src) {
   var r = undeclared(src)
   var i = arg('--identifiers') || arg('-i')
   var p = arg('--properties') || arg('-p')
@@ -19,6 +20,8 @@ concat(process.stdin, function (err, src) {
 
   if (i) r.identifiers.forEach(log)
   if (p) r.properties.forEach(log)
+}, function (err) {
+  throw err
 })
 
 function arg (s) {
