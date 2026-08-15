@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.1.5](https://github.com/unabandoned/undeclared-identifiers/compare/undeclared-identifiers-v1.1.4...undeclared-identifiers-v1.1.5) (2026-08-15)
+
+
+### Dependencies & maintenance
+
+* add .unabandoned.yml dashboard metadata ([#3](https://github.com/unabandoned/undeclared-identifiers/issues/3)) ([ced114c](https://github.com/unabandoned/undeclared-identifiers/commit/ced114ca582e4588babf60e06149b6906b0b95c9))
+* drop abandoned simple-concat for node:stream/consumers ([#7](https://github.com/unabandoned/undeclared-identifiers/issues/7)) ([f4f0b6a](https://github.com/unabandoned/undeclared-identifiers/commit/f4f0b6a00a3991c81f46d8cbc5b6fe0cd9ff94b1))
+* pin reusable workflows to the @unabandoned/.github v1.0.0 release ([#5](https://github.com/unabandoned/undeclared-identifiers/issues/5)) ([1929a00](https://github.com/unabandoned/undeclared-identifiers/commit/1929a00dc289ed62d10092e887d49cfaad604d74))
+
 ## [1.1.4](https://github.com/unabandoned/undeclared-identifiers/compare/undeclared-identifiers-v1.1.3...undeclared-identifiers-v1.1.4) (2026-08-14)
 
 
