@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.1.6](https://github.com/unabandoned/undeclared-identifiers/compare/undeclared-identifiers-v1.1.5...undeclared-identifiers-v1.1.6) (2026-08-23)
+
+
+### Dependencies & maintenance
+
+* **deps:** update commitlint monorepo to v21.2.2 ([#8](https://github.com/unabandoned/undeclared-identifiers/issues/8)) ([a77739a](https://github.com/unabandoned/undeclared-identifiers/commit/a77739a189a6b9007c8bc85f7a390595fafa9fdc))
+* **deps:** update unabandoned/.github action to v1.0.2 ([#10](https://github.com/unabandoned/undeclared-identifiers/issues/10)) ([4749e64](https://github.com/unabandoned/undeclared-identifiers/commit/4749e64048c12b87626914cc1cb1c5143afb34ee))
+
 ## [1.1.5](https://github.com/unabandoned/undeclared-identifiers/compare/undeclared-identifiers-v1.1.4...undeclared-identifiers-v1.1.5) (2026-08-15)
 
 
