@@ -2,7 +2,12 @@
   "name": "@unabandoned/undeclared-identifiers",
   "description": "find undeclared identifiers and property accesses in a javascript file.",
   "version": "1.1.9",
-  "author": "Renée Kooi <renee@kooi.me>",
+  "files": [
+    "CHANGELOG.md",
+    "bin.js",
+    "index.js"
+  ],
+  "author": "Ren\u00e9e Kooi <renee@kooi.me>",
   "bugs": {
     "url": "https://github.com/unabandoned/undeclared-identifiers/issues"
   },
