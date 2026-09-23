@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.1.9](https://github.com/unabandoned/undeclared-identifiers/compare/undeclared-identifiers-v1.1.8...undeclared-identifiers-v1.1.9) (2026-09-23)
+
+
+### Bug Fixes
+
+* stop dev-only commits from cutting releases ([#19](https://github.com/unabandoned/undeclared-identifiers/issues/19)) ([a534ebd](https://github.com/unabandoned/undeclared-identifiers/commit/a534ebdea781bc16ae5fd9b50c60d3395cc2d8f3))
+
 ## [1.1.8](https://github.com/unabandoned/undeclared-identifiers/compare/undeclared-identifiers-v1.1.7...undeclared-identifiers-v1.1.8) (2026-09-22)
 
 
