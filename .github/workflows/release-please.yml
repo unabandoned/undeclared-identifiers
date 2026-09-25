@@ -2,6 +2,7 @@ name: release-please
 on:
   push:
     branches: [default]
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
