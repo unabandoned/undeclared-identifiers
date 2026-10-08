@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.1.10](https://github.com/unabandoned/undeclared-identifiers/compare/undeclared-identifiers-v1.1.9...undeclared-identifiers-v1.1.10) (2026-10-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency acorn to v8.19.0 ([#25](https://github.com/unabandoned/undeclared-identifiers/issues/25)) ([facb846](https://github.com/unabandoned/undeclared-identifiers/commit/facb84671c4c51f2facb803e628a72b41ff6ab2e))
+
 ## [1.1.9](https://github.com/unabandoned/undeclared-identifiers/compare/undeclared-identifiers-v1.1.8...undeclared-identifiers-v1.1.9) (2026-09-23)
 
 
