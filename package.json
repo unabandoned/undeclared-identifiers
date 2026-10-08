@@ -39,7 +39,7 @@
     "test": "node --test test/*.js"
   },
   "dependencies": {
-    "acorn": "8.18.0",
+    "acorn": "8.19.0",
     "dash-ast": "2.0.1",
     "get-assigned-identifiers": "1.2.0"
   }
